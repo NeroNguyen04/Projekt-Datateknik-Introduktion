@@ -1,0 +1,105 @@
+.right {
+  font-family: "Lucida Console", "Courier New", monospace;
+  position: absolute;
+  top: 200px;
+  left: 165px; 
+  width: 100%; 
+  height: 100%; 
+  background-color: #d5d5d5;
+  padding: 10px;
+  overflow: auto;
+
+  z-index: 1; 
+}
+.top {
+  font-family: "Lucida Console", "Courier New", monospace;
+  position: relative;
+  top: -10px;
+  left: 157px; 
+  width: 100%;
+  height: 100%;
+  background-color: #b0e0e6;
+  padding: 10px;
+  box-sizing: border-box;
+
+  z-index: 0; 
+}
+
+.left {
+  font-family: "Lucida Console", "Courier New", monospace;
+  position: fixed;
+  top: -5px;
+  width: 150px;
+  left: -5px; 
+  height: 100%; 
+  background-color: #f0ff00;
+  padding: 10px;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+  font-weight: bold;
+}
+
+a:active {
+  color: blue;
+}
+/* Green circle for correct answers */
+.green-circle {
+  background-color: green;
+  border: 2px solid #100f0f;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Red circle for wrong answers */
+.red-circle {
+  background-color: red;
+  border: 2px solid #100f0f;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.empty-circle {
+  border: 2px solid #100f0f;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.radio-button {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.result {
+  margin-bottom: 20px;
+}
+
+.radio-button label {
+  margin-left: 5px;
+}
+
+
+

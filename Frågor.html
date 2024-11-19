@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+</style>
+</head>
+  <link rel="stylesheet" href="style3.css">
+<body>
+<div class="left">
+<h1>Länk:</h1>
+<p><a href="./.html">Hållbar Utveckling: Allmänt</a></p>
+<p><a href="./.html">Hållbar Utveckling: Ekologisk</a></p>
+<p><a href="./.html">Hållbar Utveckling: Ekonomi</a></p>
+<p><a href="./.html">Hållbar Utveckling: Social</a></p>
+<p><a href="./.html">Hållbar Utveckling: Quiz</a></p>
+
+
+</div>
+
+<div class="right">
+<h1>Quiz</h1>
+<p id="questions"></p>
+
+</div>
+
+<div class="top">
+<h1>Startsida</h1>
+</div>
+
+<script>
+printQuestion();
+function printQuestion() {
+            var questionContainer = document.getElementById("questions");
+            questionContainer.innerHTML = ""; 
+
+            const questionList = [
+                { question: "Fråga 1", options: ["1","2","3","4"], correct: "1" },
+                { question: "Fråga 2", options: ["1","2","3","4"], correct: "2" },
+                { question: "Fråga 3", options: ["1","2","3","4"], correct: "3" },
+                { question: "Fråga 4", options: ["1","2","3","4"], correct: "4" },
+                { question: "Fråga 5", options: ["5","6","7","8"], correct: "5" },
+                { question: "Fråga 6", options: ["5","6","7","8"], correct: "6" },
+                { question: "Fråga 7", options: ["5","6","7","8"], correct: "7" },
+                { question: "Fråga 8", options: ["5","6","7","8"], correct: "8" },
+                { question: "Fråga 9", options: ["9","10","11","12"], correct: "9" },
+                { question: "Fråga 10", options: ["9","10","11","12"], correct: "10" },
+                { question: "Fråga 11", options: ["9","10","11","12"], correct: "11" },
+                { question: "Fråga 12", options: ["9","10","11","12"], correct: "12" },
+                { question: "Fråga 13", options: ["13","14","15","16"], correct: "13" },
+                { question: "Fråga 14", options: ["13","14","15","16"], correct: "14" },
+                { question: "Fråga 15", options: ["13","14","15","16"], correct: "15" },
+                { question: "Fråga 16", options: ["13","14","15","16"], correct: "16" },
+                { question: "Fråga 17", options: ["17","18","19","20"], correct: "17" },
+                { question: "Fråga 18", options: ["17","18","19","20"], correct: "18" },
+                { question: "Fråga 19", options: ["17","18","19","20"], correct: "19" },
+                { question: "Fråga 20", options: ["17","18","19","20"], correct: "20" }
+            ];
+
+            const selectedQuestions = getRandomQuestions(questionList, 15);
+
+            selectedQuestions.forEach((qObj, index) => {
+                qObj.options = shuffleArray(qObj.options);
+
+                let questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+
+                let questionElement = document.createElement("p");
+                questionElement.textContent = `${index + 1}. ${qObj.question}`;
+                questionDiv.appendChild(questionElement);
+
+                qObj.options.forEach((option, optionIndex) => {
+                    let optionDiv = document.createElement("div");
+                    optionDiv.classList.add("option");
+
+                    let radioButton = document.createElement("input");
+                    radioButton.type = "radio";
+                    radioButton.name = `question-${index + 1}`; 
+                    radioButton.value = option;
+                    radioButton.id = `question-${index + 1}-option-${optionIndex}`;
+
+                    let label = document.createElement("label");
+                    label.textContent = option;
+                    label.htmlFor = radioButton.id; 
+
+                    optionDiv.appendChild(radioButton);
+                    optionDiv.appendChild(label);
+
+                    questionDiv.appendChild(optionDiv);
+                });
+
+                questionContainer.appendChild(questionDiv);
+            });
+
+            let submitButton = document.createElement("button");
+            submitButton.textContent = "Svara";
+            submitButton.onclick = function () {
+                submitQuiz(selectedQuestions);
+            };
+            questionContainer.appendChild(submitButton);
+        }
+
+        function getRandomQuestions(questions, count) {
+            let shuffled = [...questions].sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, count);
+        }
+
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function submitQuiz(questions) {
+            const userAnswers = questions.map((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="question-${index + 1}"]:checked`);
+                return {
+                    question: q.question,
+                    options: q.options,
+                    correct: q.correct,
+                    userAnswer: selectedAnswer ? selectedAnswer.value : null
+                };
+            });
+
+            const allAnswered = userAnswers.every(answer => answer.userAnswer !== null);
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting.");
+                return;
+            }
+
+            localStorage.setItem("quizResults", JSON.stringify(userAnswers));
+
+            window.location.href = "Svar.html"; // Redirect to results page
+        }
+
+  </script>
+
+</body>
+</html>

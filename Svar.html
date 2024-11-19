@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+</style>
+</head>
+  <link rel="stylesheet" href="style3.css">
+<body>
+<div class="left">
+<h1>Länk:</h1>
+<p><a href="./.html">Hållbar Utveckling: Allmänt</a></p>
+<p><a href="./.html">Hållbar Utveckling: Ekologisk</a></p>
+<p><a href="./.html">Hållbar Utveckling: Ekonomi</a></p>
+<p><a href="./.html">Hållbar Utveckling: Social</a></p>
+<p><a href="./.html">Hållbar Utveckling: Quiz</a></p>
+
+
+</div>
+
+<div class="right">
+<h1>Quiz</h1>
+<div id="results"></div>
+
+</div>
+
+<div class="top">
+<h1>Startsida</h1>
+</div>
+
+<script>
+    displayResults();
+
+    function displayResults() {
+    const resultContainer = document.getElementById("results");
+
+    const quizResults = JSON.parse(localStorage.getItem("quizResults"));
+
+    if (!quizResults) {
+        resultContainer.innerHTML = "<p>No quiz data found. Please take the quiz first.</p>";
+        return;
+    }
+
+    quizResults.forEach((result, index) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("result");
+
+        const questionElement = document.createElement("p");
+        questionElement.innerHTML = `<strong>${index + 1}. ${result.question}</strong>`;
+        questionDiv.appendChild(questionElement);
+
+        result.options.forEach((option, optionIndex) => {
+            const optionDiv = document.createElement("div");
+            optionDiv.classList.add("radio-button");
+
+            const circleDiv = document.createElement("div");
+            circleDiv.classList.add("circle");
+
+            if (option === result.correct) {
+                circleDiv.classList.add("green-circle");
+            } else if (option === result.userAnswer) {
+                circleDiv.classList.add("red-circle");
+            } else {
+                circleDiv.classList.add("empty-circle");
+            }
+
+            const label = document.createElement("label");
+            label.textContent = option;
+
+            optionDiv.appendChild(circleDiv);
+            optionDiv.appendChild(label);
+            questionDiv.appendChild(optionDiv);
+        });
+
+        resultContainer.appendChild(questionDiv);
+    });
+}
+
+
+      </script>
+
+</body>
+</html>
