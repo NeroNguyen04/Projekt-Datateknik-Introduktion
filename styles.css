@@ -1,0 +1,184 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4;
+    /* Light greenish background */
+    color: #333;
+    /* Darker text for better contrast */
+}
+
+header {
+    text-align: center;
+    background-color: #92c58d;
+    /* Green background */
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-trees {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tree {
+    width: 30px;
+    height: 60px;
+    background-color: green;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tree:hover {
+    transform: scale(1.1);
+    background-color: #2e8b57;
+    /* Slightly darker green on hover */
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    float: left;
+    width: 20%;
+    background-color: #e9f5e9;
+    /* Light green background */
+    height: 100vh;
+    padding: 20px;
+    border-right: 2px solid #c5e1c5;
+    /* Subtle border */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #92c58d;
+    color: white;
+}
+
+/* Content Section Styles */
+.content {
+    margin-left: 20%;
+    padding: 20px 20px 20px 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #2e8b57;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Quiz Section Styles */
+.quiz-section,
+#results {
+    margin-left: 20%;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-section h2,
+#results h2 {
+    margin-top: 0;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f4f9f4;
+    border-radius: 5px;
+    border: 1px solid #c5e1c5;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Footer Section */
+#results {
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #e9f5e9;
+    border: 2px solid #92c58d;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Content Section Styles */
+.content,
+.quiz-section,
+#intro-page,
+#results,
+#start-page {
+    margin-left: 25%;
+    /* Increased margin from the left to add space */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    float: left;
+    width: 20%;
+    background-color: #e9f5e9;
+    height: 100vh;
+    padding: 20px;
+    border-right: 2px solid #c5e1c5;
+}
+
+/* Optional: Additional space between sidebar and content */
+.content {
+    padding-left: 20px;
+    /* Extra padding on the left to ensure text is not too close */
+}

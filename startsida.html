@@ -1,10 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hållbar Utveckling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
+    <header>
+        <div class="header-trees">
+            <div class="tree" onclick="goToStartPage()"></div>
+            <div class="tree" onclick="goToStartPage()"></div>
+            <div class="tree" onclick="goToStartPage()"></div>
+            <div class="tree" onclick="goToStartPage()"></div>
+            <div class="tree" onclick="goToStartPage()"></div>
+            <div class="tree" onclick="goToStartPage()"></div>
+        </div>
+        <h1>Hållbar Utveckling</h1>
+    </header>
 
-    <h1>Hållbar utveckling Startsidan </h1>
 
+<main>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul>
+            <li id="intro-button" onclick="showIntro()">Intro</li>
+            <li>About</li>
+            <li>Info</li>
+            <li id="quiz-button" onclick="showQuiz()">Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <section id="content">
+        <!-- Start Page -->
+        <div id="start-page">
+            <h2>Välkommen till Hållbar Utveckling</h2>
+            <p>
+                Hållbar utveckling innebär att vi tillgodoser våra egna behov utan att äventyra
+                framtida generationers möjligheter att göra detsamma. Det handlar om att balansera
+                ekonomiska, sociala och miljömässiga faktorer för en hållbar framtid.
+            </p>
+        </div>
+
+        <!-- Intro Page -->
+        <div id="intro-page" class="hidden">
+            <h2>Vad är Hållbar Utveckling?</h2>
+            <p>
+                Hållbar utveckling strävar efter att skapa en värld där resurser används ansvarsfullt
+                och rättvist. Detta omfattar att bekämpa klimatförändringar, minska ojämlikheter
+                och skapa en ekonomi som är rättvis för alla.
+            </p>
+            <button onclick="goToStartPage()">Tillbaka till startsidan</button>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="quiz-section hidden">
+            <h2>Quiz</h2>
+            <div class="question">
+                <h3>1. Vilket är ett mål för hållbar utveckling?</h3>
+                <ul>
+                    <li><input type="radio" name="q1"> Bekämpa klimatförändringar</li>
+                    <li><input type="radio" name="q1"> Öka användningen av fossila bränslen</li>
+                    <li><input type="radio" name="q1"> Ökad avskogning</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h3>2. Vad är syftet med hållbar utveckling?</h3>
+                <ul>
+                    <li><input type="radio" name="q2"> Att använda resurser oansvarigt</li>
+                    <li><input type="radio" name="q2"> Att balansera miljö, ekonomi och samhälle</li>
+                    <li><input type="radio" name="q2"> Att ignorera sociala frågor</li>
+                </ul>
+            </div>
+            <button onclick="submitQuiz()">Skicka Quiz</button>
+        </div>
+    </section>
+
+    <section id="results" class="hidden">
+        <h2>Resultat</h2>
+        <p>Ditt resultat: <span id="score">0</span></p>
+    </section>
+</main>
+
+
+
+    <section id="quiz" class="quiz-section hidden">
+        <h2>Quiz</h2>
+        <div class="question">
+            <h3>1. First Question?</h3>
+            <ul>
+                <li><input type="radio" name="q1"> Option 1</li>
+                <li><input type="radio" name="q1"> Option 2</li>
+                <li><input type="radio" name="q1"> Option 3</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>2. Second Question?</h3>
+            <ul>
+                <li><input type="radio" name="q2"> Option A</li>
+                <li><input type="radio" name="q2"> Option B</li>
+                <li><input type="radio" name="q2"> Option C</li>
+            </ul>
+        </div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+    </section>
+
+    <section id="results" class="hidden">
+        <h2>Resultat</h2>
+        <p>Your score: <span id="score">0</span></p>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
