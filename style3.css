@@ -1,88 +1,206 @@
 .right {
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   position: absolute;
-  top: 200px;
-  left: 165px; 
+  top: 350px;
+  left: -5px; 
   width: 100%; 
   height: 100%; 
-  background-color: #d5d5d5;
+  background-color: #f4f9f4;
+  color: #333;
   padding: 10px;
   overflow: auto;
 
-  z-index: 1; 
+  z-index: 3; 
+  transition: margin-left .5s;
+
+
 }
+
 .top {
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   position: relative;
   top: -10px;
-  left: 157px; 
+  left: 3px; 
   width: 100%;
   height: 100%;
-  background-color: #b0e0e6;
+  background-color: #f4f9f4;
+  color: #333;
   padding: 10px;
   box-sizing: border-box;
+  z-index: 2; 
+  transition: margin-left .5s;
+}
+.top .circle.one {
+  position: absolute;
+  bottom: 370px;
+  left: 1550px;  
+  width: 300px; 
+  height: 300px;
+  background-color: #48c7747b;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeEffect 7s ease-in-out infinite;
 
-  z-index: 0; 
+}
+.top .circle.two {
+  position: absolute;
+  bottom: 250px;
+  left: 50px;  
+  width: 400px; 
+  height: 400px;
+  background-color: #9f06a267;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeEffect 3s ease-in-out infinite;
+}
+.top .circle.three {
+  position: absolute;
+  bottom: 820px;
+  left: 1025px;  
+  width: 700px; 
+  height: 750px;
+  background-color: #f2d0546c;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeEffect 4s ease-in-out infinite;
+}
+.top .circle.four {
+  position: absolute;
+  bottom: 840px;
+  left: 300px;  
+  width: 600px; 
+  height: 600px;
+  background-color: #5b48c758;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 0;
+  transition: opacity 1s ease-in-out; 
+  animation: fadeEffect 5s ease-in-out infinite;
 }
 
 .left {
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   position: fixed;
   top: -5px;
-  width: 150px;
+  width: 250px;
   left: -5px; 
   height: 100%; 
-  background-color: #f0ff00;
+  background-color: #f4f9f4;
+  color: black;
   padding: 10px;
+  opacity: 0%;
+  transition: 1s;
+  z-index: 1;
+  transition-timing-function: ease-in-out;
 }
+.left .circle.one {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;  
+  width: 300px; 
+  height: 300px;
+  background-color: #48c7747b;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeEffect 8s ease-in-out infinite;
+}
+.left .circle.two {
+  position: absolute;
+  bottom: 300px; 
+  left: 100px;  
+  width: 500px; 
+  height: 500px;
+  background-color: #9f06a267;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeEffect 4s ease-in-out infinite;
+}
+.left .circle.three {
+  position: absolute;
+  bottom: 800px;
+  left: -100px;  
+  width: 200px; 
+  height: 200px;
+  background-color: #f2d0546c;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeEffect 5s ease-in-out infinite;
+}
+.left .circle.four {
+  position: absolute;
+  bottom: 200px;
+  left: 30px;  
+  width: 150px; 
+  height: 150px;
+  background-color: #5b48c758;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out; 
+  animation: fadeEffect 6s ease-in-out infinite;
+}
+.left a {
+  position: relative;
+  z-index: 2;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
 
 a:link {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 10px;
   color: black;
-}
-
-a:visited {
-  color: purple;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: red;
-  font-weight: bold;
+  color: gray;
 }
-
-a:active {
-  color: blue;
-}
-/* Green circle for correct answers */
 .green-circle {
-  background-color: green;
-  border: 2px solid #100f0f;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  background-color: rgb(8, 201, 8);
+  border: 1px solid #100f0f;
+  width: 15px;
+  height: 15px;
+  border-radius: 30%;
   display: inline-block;
 }
 
-/* Red circle for wrong answers */
 .red-circle {
   background-color: red;
-  border: 2px solid #100f0f;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  border: 1px solid #100f0f;
+  width: 15px;
+  height: 15px;
+  border-radius: 30%;
   display: inline-block;
 }
 
 .empty-circle {
-  border: 2px solid #100f0f;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  border: 1px solid #100f0f;
+  width: 15px;
+  height: 15px;
+  border-radius: 30%;
   display: inline-block;
 }
 
 .circle {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
@@ -100,6 +218,107 @@ a:active {
 .radio-button label {
   margin-left: 5px;
 }
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4;
+    color: #333;
+}
+.center {
+  margin: 20px auto;
+  display: inline;
+  max-width: 100%;
+  height: auto;
+}
 
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+button:hover {
+    background-color: #2e8b57;
+    transform: scale(1.05);
+}
 
+button:active {
+    transform: scale(0.95);
+}
+.quiz-section,
+#results {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f4f9f4;
+  border-radius: 5px;
+  border: 1px solid #089b08;
+}
+
+.quiz-section h2,
+#results h2 {
+    margin-top: 0;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f4f9f4;
+    border-radius: 5px;
+    border: 1px solid #089b08;
+}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.left.change {
+  opacity: 100%;
+}
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.right.change {
+  margin-left:245px;
+}
+
+.top.change {
+  margin-left:237px;
+}
+.left.change .circle {
+  opacity: 1;
+}
+@keyframes fadeEffect {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.left.change .circle {
+  animation-play-state: running;
+}
