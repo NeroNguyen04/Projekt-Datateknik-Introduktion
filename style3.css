@@ -1,3 +1,12 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f9f4;
+  color: #333;
+}
+
+/* Högra menyn */
 .right {
   font-family: 'Helvetica', 'Arial', sans-serif;
   position: absolute;
@@ -12,10 +21,9 @@
 
   z-index: 3; 
   transition: margin-left .5s;
-
-
 }
 
+/* Top menyn */
 .top {
   font-family: 'Helvetica', 'Arial', sans-serif;
   position: relative;
@@ -32,7 +40,7 @@
 }
 .top .circle.one {
   position: absolute;
-  bottom: 370px;
+  bottom: 370px; 
   left: 1550px;  
   width: 300px; 
   height: 300px;
@@ -42,7 +50,6 @@
   z-index: 0;
   transition: opacity 1s ease-in-out;
   animation: fadeEffect 7s ease-in-out infinite;
-
 }
 .top .circle.two {
   position: absolute;
@@ -84,6 +91,7 @@
   animation: fadeEffect 5s ease-in-out infinite;
 }
 
+/* Vänstra menyn */
 .left {
   font-family: 'Helvetica', 'Arial', sans-serif;
   position: fixed;
@@ -151,6 +159,8 @@
   transition: opacity 1s ease-in-out; 
   animation: fadeEffect 6s ease-in-out infinite;
 }
+
+/* Vänstra menyns länkar */
 .left a {
   position: relative;
   z-index: 2;
@@ -159,7 +169,7 @@
   display: block;
 }
 
-
+/* Länkar */
 a:link {
   font-family: 'Helvetica', 'Arial', sans-serif;
   margin: 15px 0;
@@ -172,6 +182,8 @@ a:link {
 a:hover {
   color: gray;
 }
+
+/* Svar checkrutor */
 .green-circle {
   background-color: rgb(8, 201, 8);
   border: 1px solid #100f0f;
@@ -206,6 +218,7 @@ a:hover {
   margin-right: 10px;
 }
 
+/* Frågor checkrutor */
 .radio-button {
   margin-bottom: 10px;
   padding: 5px;
@@ -218,13 +231,6 @@ a:hover {
 .radio-button label {
   margin-left: 5px;
 }
-body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f9f4;
-    color: #333;
-}
 .center {
   margin: 20px auto;
   display: inline;
@@ -232,6 +238,7 @@ body {
   height: auto;
 }
 
+/* Grön knapp Svara */
 button {
     background-color: #4caf50;
     color: white;
@@ -250,6 +257,8 @@ button:hover {
 button:active {
     transform: scale(0.95);
 }
+
+/* Resultat rutan */
 .quiz-section,
 #results {
   margin-bottom: 20px;
@@ -264,6 +273,7 @@ button:active {
     margin-top: 0;
 }
 
+/* Frågeruta */
 .question {
     margin-bottom: 20px;
     padding: 15px;
@@ -272,20 +282,18 @@ button:active {
     border: 1px solid #089b08;
 }
 
+/* Visa mer knapp */
 .container {
   display: inline-block;
   cursor: pointer;
 }
-
+/* Tre stycken rektanglar */
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
   background-color: #333;
   margin: 6px 0;
   transition: 0.4s;
-}
-.left.change {
-  opacity: 100%;
 }
 .change .bar1 {
   transform: translate(0, 11px) rotate(-45deg);
@@ -297,6 +305,10 @@ button:active {
   transform: translate(0, -11px) rotate(45deg);
 }
 
+/* Meny animationer */
+.left.change {
+  opacity: 100%;
+}
 .right.change {
   margin-left:245px;
 }
@@ -307,6 +319,8 @@ button:active {
 .left.change .circle {
   opacity: 1;
 }
+
+/* FadeEffect för cirklarna, ger sidan lite mer stil */
 @keyframes fadeEffect {
   0% {
     opacity: 0.2;
@@ -319,6 +333,7 @@ button:active {
   }
 }
 
+/* Animationerna för vänstra meny spelas när vänstra menyn visas */
 .left.change .circle {
   animation-play-state: running;
 }
