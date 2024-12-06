@@ -11,7 +11,7 @@ function printQuestion() {
 
     //Frågor lista
     const questionList = [
-        { question: "Fråga 1", options: ["1", "2", "3", "4"], correct: "1" },
+        { question: "Vad innebär klimatförändringar?", options: ["Permanenta och märkbara förändringar i klimatsystem", "Förändringar i temperaturen mellan två dagar", "Solen lyser starkare på dagen är morgonen", "Förändringar i temperaturen mellan två månader"], correct: "Permanenta och märkbara förändringar i klimatsystem" },
         { question: "Fråga 2", options: ["1", "2", "3", "4"], correct: "2" },
         { question: "Fråga 3", options: ["1", "2", "3", "4"], correct: "3" },
         { question: "Fråga 4", options: ["1", "2", "3", "4"], correct: "4" },
